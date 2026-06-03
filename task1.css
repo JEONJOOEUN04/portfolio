@@ -219,6 +219,7 @@ header {
 }
 
 .code-body {
+    position: relative;
     padding: 36px 40px 40px;
 }
 
@@ -592,6 +593,61 @@ header {
     padding: 64px 0 90px;
 }
 
+/* 프로필 카드 (About 상단) */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+}
+.profile-photo {
+    width: 132px;
+    height: 132px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+.profile-info {
+    min-width: 0;
+}
+.profile-name {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: var(--fg-bright);
+    letter-spacing: -0.01em;
+}
+.profile-name span {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+}
+.profile-bio {
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: var(--fg);
+    line-height: 1.6;
+}
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Home 히어로 아바타 (메모지 — 투명 PNG, 크롭 없이 통째로) */
+.hero-avatar {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -819,6 +875,16 @@ header {
     }
     .nav-list li a {
         padding: 0 12px;
+    }
+    /* 프로필 카드 세로 정렬 */
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    /* 좁은 화면에선 히어로 아바타 숨김 (제목과 겹침 방지) */
+    .hero-avatar {
+        display: none;
     }
 }
 
