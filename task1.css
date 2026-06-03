@@ -132,13 +132,13 @@ header {
     color: var(--fg);
 }
 .logo-home {
-    width: 16px;
-    height: 16px;
-    color: var(--type);
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
     transition: transform 0.15s ease;
 }
 .logo:hover .logo-home {
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(1.08);
 }
 
 /* 우측: 파일 탭 */
@@ -219,7 +219,6 @@ header {
 }
 
 .code-body {
-    position: relative;
     padding: 36px 40px 40px;
 }
 
@@ -237,7 +236,6 @@ header {
 .hero-section p {
     font-size: 16px;
     color: var(--fg);
-    max-width: 640px;
     margin: 0;
 }
 
@@ -638,15 +636,6 @@ header {
     gap: 6px;
 }
 
-/* Home 히어로 아바타 (메모지 — 투명 PNG, 크롭 없이 통째로) */
-.hero-avatar {
-    position: absolute;
-    top: 4px;
-    right: 12px;
-    width: 96px;
-    height: 96px;
-    object-fit: contain;
-}
 
 .about-grid {
     display: grid;
@@ -881,10 +870,6 @@ header {
         flex-direction: column;
         align-items: flex-start;
         gap: 18px;
-    }
-    /* 좁은 화면에선 히어로 아바타 숨김 (제목과 겹침 방지) */
-    .hero-avatar {
-        display: none;
     }
 }
 
