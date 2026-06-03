@@ -635,6 +635,34 @@ header {
     flex-wrap: wrap;
     gap: 6px;
 }
+.profile-links {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.profile-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-panel);
+    color: var(--fg);
+    font-family: var(--mono);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+.profile-links a svg {
+    width: 15px;
+    height: 15px;
+}
+.profile-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
 
 
 .about-grid {

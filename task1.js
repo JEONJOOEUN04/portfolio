@@ -160,8 +160,12 @@ const projects = {
             role: "BE",
             stack: ["Django", "Python", "MySQL"],
             activity: "2026-1 빅데이터 플랫폼 캡스톤디자인 과제",
-            date: "2024/09/23 → 2024/09/29",
+            date: "2026",
             url: " ",
+            award: [
+                "2026 창업아이디어 우체통 공모전 - 장려상",
+                "2026 유튜브 콘텐츠 경진대회 - 우수상",
+            ],
             description: "피부 및 성분 기반으로 개인 맞춤 분석을 제공하는 AI 뷰티 플랫폼",
         },
 
@@ -269,10 +273,14 @@ const modalTitle = modal.querySelector(".modal-title");
 const modalProps = modal.querySelector(".modal-props");
 const modalCover = modal.querySelector(".modal-cover");
 
-// 항목 값을 HTML로 (칩 배열 / 링크 / 일반 텍스트)
+// 항목 값을 HTML로 (칩 배열 / 여러 줄 배열 / 링크 / 일반 텍스트)
 function renderValue(field, value) {
     if (field.chips && Array.isArray(value)) {
         return `<span class="chip-row">${stackChips(value)}</span>`;
+    }
+    if (Array.isArray(value)) {
+        // 값이 여러 개면 줄바꿈으로 나열 (예: 수상 2건)
+        return value.join("<br>");
     }
     if (field.link) {
         return `<a href="${value}" target="_blank" rel="noopener">${value}</a>`;
